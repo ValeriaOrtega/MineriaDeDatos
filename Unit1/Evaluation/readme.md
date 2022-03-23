@@ -134,7 +134,7 @@ Life_Expectancy_At_Birth_2013 <- c(75.3286585365854,60.0282682926829,51.86617073
 
 
 
-#Subir el archivo de Excel y leerlo
+#### Upload the Excel file and read it
 stats <- read.csv(file.choose())
 
 stats
@@ -148,17 +148,17 @@ le_dfMerge <- merge(stats, Life_Expectancy, by.x = "Country.Code", by.y ="Countr
 
 le_dfMerge
 
-#Grafica de fertilidad 1960
+#### Fertility Chart 1960
 qplot(data = le_dfMerge, y = Life_Expectancy_1960, x = Fertility.Rate)
 
-#Grafica de Regiones 1960
+### Region Chart 1960
 qplot(data = le_dfMerge, x = Fertility.Rate, y = Life_Expectancy_1960,
       color = Region, size=I(6), shape=I(20), alpha =I(.6), main = "Fertility Rate vs Life Expectancy by Region in 1960")
 
-#Grafica de fertilidad 2013
+### Fertility Chart 2013
 qplot(data = le_dfMerge, y = Life_Expectancy_2013, x = Fertility.Rate)
 
-#Grafica de Regiones 2013
+### Region Chart 2013
 qplot(data = le_dfMerge, x = Fertility.Rate, y = Life_Expectancy_2013,
 color = Region, size=I(6), shape=I(20), alpha =I(.6), main = "Fertility Rate vs Life Expectancy by Region in 2013")
 
